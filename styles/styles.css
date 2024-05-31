@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+  margin: 0;
+  font: 62.5% "Montserrat", sans-serif;
+  background-color: #f2f2f2;
+  scroll-behavior: smooth; 
+}
+
+.bar {
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between; 
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #130748;
+  z-index: 1000;
+}
+
+.logo {
+  margin-left: 1em; 
+  transition: transform 0.3s ease; 
+}
+
+.logo:hover {
+  transform: scale(1.1); 
+}
+
+.bar ul {
+  display: flex; 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bar li {
+  position: relative;
+  border-radius: 1em;
+  margin-right: 1em; 
+}
+
+.bar li::before,
+.bar li::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #3cd5e3d4;
+  transition: all 0.5s cubic-bezier(0.4, -1, 0.2, -1);
+}
+
+.bar li::before {
+  top: 0;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.bar li::after {
+  bottom: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+.bar li:hover::before,
+.bar li:hover::after {
+  width: 25%;
+  height: 3px;
+}
+
+.bar li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 0.5em 2em;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.bar li.active {
+  border-color: #275254;
+}
+
+.bar li.active::before,
+.bar li.active::after {
+  width: 100%;
+  height: 50%;
+}
+
+.content {
+  padding: 100px 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+#sobre-unideh {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  url('/img/banner.jpg');
+  background-size: cover; 
+  background-position: center;
+  color: #ffffff; 
+}
+
+#fotos {
+  background-color: #f0f0f0; 
+}
+
+#contacto {
+  background-color: #e0e0e0; 
+}
+
+
+/*cards-about me*/
+.about-container {
+  display: inline-flex;
+  gap: 30px; 
+}
+
+.card {
+  
+  width: 300px;
+  height: auto; 
+  background: rgba(0, 0, 0, 0.589);
+  border-radius: 10px;
+  transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  border: solid white;
+  transition: transform 0.3s ease;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-weight: bolder;
+  color:white;
+}
+
+/*fotos*/
+ #fotos h1{
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+/* Estilos para la galería */
+
+.title-services{
+  font-size: 4rem;
+}
+.img-gallery{
+  width: 80%;
+  margin: 50px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 30px;
+}
+.img-container {
+  position: relative;
+}
+
+.img-container .img-title {
+  position: absolute;
+  bottom: 4px; 
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  margin: 0;
+  transition: 1s;
+  font-size: 30px;
+}
+.img-gallery img{
+  width: 100%;
+  cursor: pointer;
+  transition: 1s;
+}
+.img-gallery img:hover{
+  transform: scale(1.1);
+}
+
+/* Contacto */
+.colorful-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
+
+textarea.form-input {
+  height: 100px;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6f69;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #ff5f59;
+}
+
+/*social media footer*/
+.card-social {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
